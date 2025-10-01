@@ -1,5 +1,8 @@
 <template>
   <div class="min-h-screen">
+    <!-- Analytics Component -->
+    <Analytics ref="analytics" :enable-analytics="true" />
+    
     <!-- Hero Section -->
     <section class="min-h-screen flex flex-col justify-center items-center text-white px-4">
       <div class="text-center max-w-4xl mx-auto">
@@ -28,7 +31,7 @@
         <!-- Contact Grid -->
         <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
           <!-- Phone -->
-          <a href="tel:+420778790537" class="bg-white/90 backdrop-blur-sm rounded-xl p-4 hover:bg-white transition-all duration-200 transform hover:scale-105 shadow-lg">
+          <a href="tel:+420778790537" @click="trackContactClick('phone')" class="bg-white/90 backdrop-blur-sm rounded-xl p-4 hover:bg-white transition-all duration-200 transform hover:scale-105 shadow-lg">
             <div class="flex flex-col items-center text-center">
               <div class="bg-black p-3 rounded-full mb-3">
                 <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -42,7 +45,7 @@
           </a>
           
           <!-- Email -->
-          <a href="mailto:royalflushbrno@seznam.cz" class="bg-white/90 backdrop-blur-sm rounded-xl p-4 hover:bg-white transition-all duration-200 transform hover:scale-105 shadow-lg">
+          <a href="mailto:royalflushbrno@seznam.cz" @click="trackContactClick('email')" class="bg-white/90 backdrop-blur-sm rounded-xl p-4 hover:bg-white transition-all duration-200 transform hover:scale-105 shadow-lg">
             <div class="flex flex-col items-center text-center">
               <div class="bg-black p-3 rounded-full mb-3">
                 <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -56,7 +59,7 @@
           </a>
           
           <!-- Instagram -->
-          <a href="https://instagram.com/royalflush_brno" target="_blank" rel="noopener noreferrer" class="bg-white/90 backdrop-blur-sm rounded-xl p-4 hover:bg-white transition-all duration-200 transform hover:scale-105 shadow-lg">
+          <a href="https://instagram.com/royalflush_brno" @click="trackContactClick('instagram')" target="_blank" rel="noopener noreferrer" class="bg-white/90 backdrop-blur-sm rounded-xl p-4 hover:bg-white transition-all duration-200 transform hover:scale-105 shadow-lg">
             <div class="flex flex-col items-center text-center">
               <div class="bg-black p-3 rounded-full mb-3">
                 <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
@@ -71,7 +74,7 @@
           </a>
           
           <!-- Facebook -->
-          <a href="https://www.facebook.com/royalflushmalakopana" target="_blank" rel="noopener noreferrer" class="bg-white/90 backdrop-blur-sm rounded-xl p-4 hover:bg-white transition-all duration-200 transform hover:scale-105 shadow-lg">
+          <a href="https://www.facebook.com/royalflushmalakopana" @click="trackContactClick('facebook')" target="_blank" rel="noopener noreferrer" class="bg-white/90 backdrop-blur-sm rounded-xl p-4 hover:bg-white transition-all duration-200 transform hover:scale-105 shadow-lg">
             <div class="flex flex-col items-center text-center">
               <div class="bg-black p-3 rounded-full mb-3">
                 <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
@@ -98,6 +101,14 @@
 </template>
 
 <script setup>
+// Analytics component reference
+const analytics = ref()
+
+// Track contact interactions
+const trackContactClick = (method) => {
+  analytics.value?.trackContact(method)
+}
+
 // SEO Meta tags
 useHead({
   title: 'Royal Flush Brno',
