@@ -26,10 +26,27 @@
           <span class="block text-black">BRNO</span>
         </h1>
 
-        <p class="text-black mt-10 mb-12">Stay tuned.<br/>The Site is comming.<br/>Soon or later.</p>
+        <div class="mt-10 mb-12 flex flex-col items-center">
+          <p class="text-black text-lg md:text-xl max-w-2xl mx-auto mb-8 font-medium leading-relaxed">
+            Největší klub malého fotbalu v České republice.<br/>
+            Domov šampionů s týmy pro všechny věkové kategorie od U8 po veterány.
+          </p>
+          
+          <a 
+            href="https://www.winnersport.cz/royal-flush-brno/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="group relative inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white transition-all duration-200 bg-black rounded-full hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 transform hover:scale-105 shadow-xl"
+          >
+            <span class="mr-2">Vstoupit do E-shopu</span>
+            <svg class="w-5 h-5 transition-transform duration-200 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+            </svg>
+          </a>
+        </div>
         
         <!-- Contact Grid -->
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto mb-12">
           <!-- Phone -->
           <a href="tel:+420778790537" @click="trackContactClick('phone')" class="bg-white/90 backdrop-blur-sm rounded-xl p-4 hover:bg-white transition-all duration-200 transform hover:scale-105 shadow-lg">
             <div class="flex flex-col items-center text-center">
@@ -113,16 +130,16 @@ const trackContactClick = (method) => {
 useHead({
   title: 'Royal Flush Brno',
   meta: [
-    { name: 'description', content: 'Royal Flush Brno - Biggest minifootball team in Czech republic with teams for all ages from U8 to Veterans.' },
-    { name: 'keywords', content: 'minifootball, minisoccer, club, Brno, Czech Republic, youth teams, veterans, professional coaching' },
+    { name: 'description', content: 'Royal Flush Brno - Největší klub malého fotbalu v České republice s týmy pro všechny věkové kategorie od U8 po veterány.' },
+    { name: 'keywords', content: 'malý fotbal, minifotbal, klub, Brno, Česká republika, mládežnické týmy, veteráni, profesionální trénink' },
     { name: 'author', content: 'Royal Flush Brno' },
-    { property: 'og:title', content: 'Royal Flush Brno - Home of Champions' },
-    { property: 'og:description', content: 'Football club in Brno with teams for all ages from U8 to Veterans.' },
+    { property: 'og:title', content: 'Royal Flush Brno - Domov šampionů' },
+    { property: 'og:description', content: 'Fotbalový klub v Brně s týmy pro všechny věkové kategorie od U8 po veterány.' },
     { property: 'og:type', content: 'website' },
     { property: 'og:image', content: '/images/royal-flush-logo.jpg' },
     { name: 'twitter:card', content: 'summary_large_image' },
-    { name: 'twitter:title', content: 'Royal Flush Brno - Home of Champions' },
-    { name: 'twitter:description', content: 'Biggest minifootball team in Czech Republic with teams for all ages from U8 to Veterans.' }
+    { name: 'twitter:title', content: 'Royal Flush Brno - Domov šampionů' },
+    { name: 'twitter:description', content: 'Největší klub malého fotbalu v České republice s týmy pro všechny věkové kategorie od U8 po veterány.' }
   ],
   script: [
     {
@@ -131,7 +148,7 @@ useHead({
         '@context': 'https://schema.org',
         '@type': 'SportsOrganization',
         name: 'Royal Flush Brno',
-        description: 'Football club in Brno, Czech Republic',
+        description: 'Fotbalový klub v Brně, Česká republika',
         url: 'https://royalflushbrno.com',
         logo: '/images/royal-flush-logo.jpg',
         address: {

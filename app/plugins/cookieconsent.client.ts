@@ -43,7 +43,7 @@ export default defineNuxtPlugin((nuxtApp) => {
             marketing: {}
         },
         language: {
-            default: 'en',
+            default: 'cs',
             autoDetect: 'browser',
             translations: {
                 en: {
