@@ -33,6 +33,7 @@
           </p>
           
           <a 
+            id="eshop-link"
             href="https://www.winnersport.cz/royal-flush-brno/" 
             target="_blank" 
             rel="noopener noreferrer"
