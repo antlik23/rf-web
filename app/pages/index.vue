@@ -1,7 +1,7 @@
 <template>
   <div class="min-h-screen">
     <!-- Analytics Component -->
-    <Analytics ref="analytics" :enable-analytics="true" />
+
     
     <!-- Hero Section -->
     <section class="min-h-screen flex flex-col justify-center items-center text-white px-4">
@@ -113,12 +113,11 @@
 </template>
 
 <script setup>
-// Analytics component reference
-const analytics = ref()
-
 // Track contact interactions
+const { trackContact } = useAnalytics()
+
 const trackContactClick = (method) => {
-  analytics.value?.trackContact(method)
+  trackContact(method)
 }
 
 // SEO Meta tags
