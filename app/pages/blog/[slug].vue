@@ -80,6 +80,27 @@ const articles = {
       <p>Doufáme, že se vám nový web bude líbit a budete se na něj rádi vracet!</p>
     `
   },
+  'zimowy-puchar-2025': {
+    title: 'Royal Flush Brno vyráží dobýt Polsko! Dva týmy na Zimowym Pucharze 2025!',
+    description: 'Máme pro vás skvělou zprávu! Náš klub Royal Flush Brno se chystá na další velkou mezinárodní výzvu. Ve dnech 13. a 14. prosince 2025 se zúčastníme prestižního fotbalového turnaje Zimowy Puchar 2025 (Memoriál Przemka Sawickiego) v polské Varšavě!',
+    date: '12. 12. 2025',
+    author: 'Royal Flush Tým',
+    image: '/images/blog/poland/header.jpeg',
+    content: `
+      <p>Tento turnaj, pořádaný Ligou Bemowskou, je považován za <strong>největší a nejlepší celopolský turnaj</strong> v malé kopané 6x6. Každoročně se zde utká přes 130 týmů z celého Polska i ze zahraničí, a proto je to pro nás obrovská příležitost poměřit síly s tou nejlepší konkurencí.</p>
+      
+      <p>Turnaj se odehraje v moderním a vyhřívaném areálu <strong>OSiR Bemowo</strong> (ul. Obrońców Tobruku 11).</p>
+      
+      <h3>Dva silné týmy!</h3>
+      <p>Do Varšavy nevyrážíme s prázdnou – na turnaj vyšleme hned <strong>dva silné týmy: Royal Flush A a Royal Flush B</strong>. Oba týmy jsou odhodlané bojovat o postup a ukázat, že malá kopaná z Brna má co nabídnout. Každý tým má garantovány minimálně 4 zápasy v herním formátu 6 proti 6, takže o pořádnou porci kvalitního fotbalu nebude nouze.</p>
+      
+      <p>Držte nám palce! Budeme se snažit reprezentovat náš klub v tom nejlepším světle a přivézt domů pohár!</p>
+      
+      <p>Sledujte nás na sociálních sítích, kde se v průběhu turnaje podělíme o foto a video reportáže přímo z Varšavy.</p>
+      
+      <p><strong>Těšíme se na vás! Royal Flush Brno.</strong></p>
+    `
+  },
   'spoustime-eshop': {
     title: 'Spouštíme nový e-shop!',
     description: 'Posíláme předčasný vánoční dárek všem lidem okolo našeho Royalu!',
@@ -113,11 +134,41 @@ const articles = {
 
 const article = computed(() => articles[route.params.slug])
 
+// Base URL for the site
+const baseUrl = 'https://www.royalflush.cz'
+const pageUrl = computed(() => `${baseUrl}/blog/${route.params.slug}`)
+const imageUrl = computed(() => article.value ? `${baseUrl}${article.value.image}` : `${baseUrl}/images/royal-flush-logo.jpg`)
+
 useHead({
   title: article.value ? `${article.value.title} | Royal Flush Brno` : 'Článek nenalezen',
   meta: [
     { name: 'description', content: article.value?.description || 'Článek nenalezen' }
   ]
+})
+
+// SEO Meta for social sharing (Facebook, Twitter/X, Instagram)
+useSeoMeta({
+  // Open Graph (Facebook, Instagram, LinkedIn, etc.)
+  ogType: 'article',
+  ogTitle: () => article.value?.title || 'Royal Flush Brno',
+  ogDescription: () => article.value?.description || 'Novinky z klubu Royal Flush Brno',
+  ogImage: () => imageUrl.value,
+  ogImageWidth: 1200,
+  ogImageHeight: 630,
+  ogUrl: () => pageUrl.value,
+  ogSiteName: 'Royal Flush Brno',
+  ogLocale: 'cs_CZ',
+  
+  // Article specific
+  articlePublishedTime: () => article.value?.date,
+  articleAuthor: () => article.value?.author,
+  
+  // Twitter/X Card
+  twitterCard: 'summary_large_image',
+  twitterTitle: () => article.value?.title || 'Royal Flush Brno',
+  twitterDescription: () => article.value?.description || 'Novinky z klubu Royal Flush Brno',
+  twitterImage: () => imageUrl.value,
+  twitterSite: '@RoyalFlushBrno'
 })
 </script>
 

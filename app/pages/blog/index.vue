@@ -57,6 +57,13 @@
 <script setup>
 const newsItems = [
   {
+    slug: 'zimowy-puchar-2025',
+    title: 'Royal Flush Brno vyráží dobýt Polsko!',
+    description: 'Máme pro vás skvělou zprávu! Náš klub Royal Flush Brno se chystá na další velkou mezinárodní výzvu – prestižní turnaj Zimowy Puchar 2025 ve Varšavě!',
+    date: '12. 12. 2025',
+    image: '/images/blog/poland/header.jpeg'
+  },
+  {
     slug: 'spoustime-eshop',
     title: 'Spouštíme vlastní ESHOP!',
     description: 'Otevíráme vlastní eshop. Na e-shopu najdete náš merch od společnosti MASITA. Trička, mikiny, tepláky, batoh nebo třeba taška Royalu.',
