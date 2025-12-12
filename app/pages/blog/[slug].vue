@@ -141,7 +141,7 @@ const articles = {
 const article = computed(() => articles[route.params.slug])
 
 // Base URL for the site
-const baseUrl = 'https://www.royalflush.cz'
+const baseUrl = 'https://www.royalflushbrno.cz'
 const pageUrl = computed(() => `${baseUrl}/blog/${route.params.slug}`)
 const imageUrl = computed(() => article.value ? `${baseUrl}${article.value.image}` : `${baseUrl}/images/royal-flush-logo.jpg`)
 
