@@ -98,6 +98,12 @@ const articles = {
       
       <p>Sledujte nás na sociálních sítích, kde se v průběhu turnaje podělíme o foto a video reportáže přímo z Varšavy.</p>
       
+      <h3>Užitečné odkazy</h3>
+      <ul>
+        <li><a href="https://www.facebook.com/events/bemowski-o%C5%9Brodek-pi%C5%82ki-no%C5%BCnej-bopn/v-memoria%C5%82-przemka-sawickiego-puchar-zimy-ligi-bemowskiej/1106308781109218/" target="_blank" rel="noopener noreferrer">Facebook událost turnaje</a></li>
+        <li><a href="https://www.ligabemowska.pl/o-nas/aktualnosci/item/1960-terminarz-vi-memorialu-przemka-sawickiego" target="_blank" rel="noopener noreferrer">Oficiální rozpis zápasů na Liga Bemowska</a></li>
+      </ul>
+      
       <p><strong>Těšíme se na vás! Royal Flush Brno.</strong></p>
     `
   },
@@ -197,5 +203,15 @@ useSeoMeta({
 
 .prose li {
   margin-bottom: 0.5rem;
+}
+
+.prose a {
+  color: #eab308;
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+
+.prose a:hover {
+  color: #facc15;
 }
 </style>
